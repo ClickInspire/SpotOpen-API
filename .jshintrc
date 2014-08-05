@@ -1,0 +1,51 @@
+{
+	"globals" : {
+		/* pretty much all from mocha */
+		"test" : true,
+		"suite" : true,
+		"suiteSetup" : true,
+		"suiteTeardown": true,
+		"ajax" : true
+	},
+	
+	/* ignoring specific warnings */
+	/* these should be turned on */
+		"-W014" : true, // bad line breaking
+		"-W033" : true, // semicolons
+		"-W032" : true, // extra semicolon
+		"-W079" : true, // redefining Error.  yeah, don't do this!  especially when Error.js is not actually a JS error! (yet)
+		"-W058" : true, // missing () invoking constructor.  (didn't know you could do this - exclusively (new Date) in our code
+		"-W083" : true, // Don't make functions within a loop.  quite a few of these, see how it can get you:  http://www.jshint.com/docs/options/#loopfunc
+	
+	/* these are in the good coding style category */
+		"-W099" : true, // mixed tabs and spaces - bloody annoying if you don't have the same tab setting.
+		"-W041" : true, // Use '===' to compare with ... - bad because of implict type conversion, ie, don't be lazy, eg, code should handle undefined as well as false
+		"-W069" : true, // better written in dot notation  array["length"] and so on.
+	
+	/* i don't think these matter much, but probably good practice - although i like e for exceptions */
+		"-W065" : true, // missing radix on parseInt
+		"-W080" : true, // It's not necessary to initialize 'started' to
+						// 'undefined'
+		"-W002" : true, // Value of 'e' may be overwritten in IE 8 and
+						// earlier
+
+	/* extra checks */
+	"undef": true,	// http://www.jshint.com/docs/options/#undef
+	"nonew": true, 	// http://www.jshint.com/docs/options/#nonew,
+	"newcap": true,  	// http://www.jshint.com/docs/options/#newcap,
+	"immed": true, 	// http://www.jshint.com/docs/options/#immed,
+	
+	"bitwise": true,	// http://www.jshint.com/docs/options/#bitwise
+	
+	
+/*	want to turn these on eventually - easy mistakes */
+//	"maxcomplexity": 5,   // not sure what the value should be, but lower is generally regarded as better
+//	"latedef": true, 	// http://www.jshint.com/docs/options/#latedef,	
+//	"unused": true,  	// http://www.jshint.com/docs/options/#unused
+//	"eqeqeq": true, 	// http://www.jshint.com/docs/options/#eqeqeq
+//	"curly": true, 	// http://www.jshint.com/docs/options/#curly
+	
+
+	/** */
+	"node" : true		//add node.js globals
+}
